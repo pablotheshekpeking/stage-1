@@ -5,19 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage 1</title>
-    <link rel="stylesheet" href="style/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="style/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-    <script src="style/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style/fontawesome-free-5.11.2-web/css/all.min.css">
+    <style>
+        a button:hover {
+            cursor: pointer; 
+            color: blue;
+        }
+    </style>
 </head>
 
 <body style="background-color: #dddddd;">
-    <section id="content" style="margin-top: 50px; margin-bottom: 50px;">
-        <div class="container">
-            <div class="container-fluid">
-                <div class="col-md-2"></div>
-                <div class="col-md-8" id="main-content" style="border-radius: 20px;">
-                    <img src="slackimage.JPG" alt="" width="100%" height="600px" data-testid="slackDisplayImage">
+    <section id="content" style="margin-top: 50px; margin-bottom: 50px; margin-right: 10%; margin-left: 10%;">
+                    <img src="slackimage.JPG" alt="" width="100%" data-testid="slackDisplayImage">
 
                     <section class="content">
                         <!--slack name starts -->
@@ -37,7 +35,7 @@
                         <!--current UTC time starts -->
                         <section id="UTCtime">
                             <h4>Current UTC Time: </h4>
-                            <p>The current UTC time is: <span id="utcTime"></span></p>
+                            <p>The current UTC time is: <span id="currentTime"></span></p>
                         </section>
                         <!--current UTC time stops -->
 
@@ -50,14 +48,10 @@
 
                         <!--git button starts-->
                         <section style="margin: auto; justify-content: center;">
-                            <a href="https://github.com/pablotheshekpeking/zuri-stage-1"><button class="btn" data-testid="githubURL">GitHub Repository</button></a>
+                            <a href="https://github.com/pablotheshekpeking/zuri-stage-1"><button style="padding: 10px;" data-testid="githubURL">GitHub Repository</button></a>
                         </section>
                         <!--git button stops-->
                     </section>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-        </div>
     </section>
 </body>
 
@@ -76,19 +70,12 @@
     dayOfWeekElement.textContent = daysOfWeek[dayIndex];
 
 
-    // Function to update the UTC time
-    function updateUTCTime() {
-        var utcTimeElement = document.getElementById("utcTime");
-        var currentTime = new Date();
-        var utcTimeString = currentTime.toISOString();
-        utcTimeElement.textContent = utcTimeString;
-    }
+    // Get the current UTC time in milliseconds
+        var currentUTCTime = new Date().getTime();
 
-    // Update the UTC time initially
-    updateUTCTime();
-
-    // Update the UTC time every second (optional)
-    setInterval(updateUTCTime, 1000);
+        // Display the current UTC time in the HTML element
+        var currentTimeElement = document.getElementById("currentTime");
+        currentTimeElement.textContent = currentUTCTime;
 </script>
 
 </html>
