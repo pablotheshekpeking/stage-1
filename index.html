@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1</title>
+    <link rel="stylesheet" href="style/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="style/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script src="style/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style/fontawesome-free-5.11.2-web/css/all.min.css">
+</head>
+
+<body style="background-color: #dddddd;">
+    <section id="content">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" id="main-content" style="border-radius: 20px;">
+                    <img src="slackimage.JPG" alt="" width="100%" height="600px" data-testid="slackDisplayImage">
+
+                    <section class="content">
+                        <!--slack name starts -->
+                        <section data-testid="slackUserName" style="margin: auto; text-align: center;">
+                            <h2>Slack name: </h2>
+                            <h4>Pablotheshekpeking</h4>
+                        </section>
+                        <!--slack name stops -->
+
+                        <!--day of week starts -->
+                        <section id="dayofweek">
+                            <h4>Day of the Week:</h4>
+                            <p data-testid="currentDayOfTheWeek">Today is <span id="dayOfWeek"></span></p>
+                        </section>
+                        <!--day of week stops -->
+
+                        <!--current UTC time starts -->
+                        <section id="UTCtime">
+                            <h4>Current UTC Time: </h4>
+                            <p>The current UTC time is: <span id="utcTime"></span></p>
+                        </section>
+                        <!--current UTC time stops -->
+
+                        <!--my track starts -->
+                        <section id="UTCtime">
+                            <h4>My Track: </h4>
+                            <p>Frontend</p>
+                        </section>
+                        <!--my track stops -->
+
+                        <!--git button starts-->
+                        <section style="margin: auto; justify-content: center;">
+                            <a href=""><button class="btn" data-testid="githubURL">GitHub Repository</button></a>
+                        </section>
+                        <!--git button stops-->
+                    </section>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    // Get the current date
+    var currentDate = new Date();
+
+    // Array of day names
+    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    // Get the day of the week (0-6)
+    var dayIndex = currentDate.getDay();
+
+    // Display the day of the week
+    var dayOfWeekElement = document.getElementById("dayOfWeek");
+    dayOfWeekElement.textContent = daysOfWeek[dayIndex];
+
+
+    // Function to update the UTC time
+    function updateUTCTime() {
+        var utcTimeElement = document.getElementById("utcTime");
+        var currentTime = new Date();
+        var utcTimeString = currentTime.toISOString();
+        utcTimeElement.textContent = utcTimeString;
+    }
+
+    // Update the UTC time initially
+    updateUTCTime();
+
+    // Update the UTC time every second (optional)
+    setInterval(updateUTCTime, 1000);
+</script>
+
+</html>
