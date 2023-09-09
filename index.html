@@ -15,27 +15,27 @@
 
 <body style="background-color: #dddddd;">
     <section id="content" style="margin-top: 50px; margin-bottom: 50px; margin-right: 10%; margin-left: 10%;">
-                    <img src="slackimage.JPG" alt="" width="100%" data-testid="slackDisplayImage">
+                    <img src="slackimage.JPG" alt="Pablotheshekpeking" width="100%" data-testid="slackDisplayImage">
 
                     <section class="content">
                         <!--slack name starts -->
-                        <section data-testid="slackUserName" style="margin: auto; text-align: center;">
+                        <section style="margin: auto; text-align: center;">
                             <h2>Slack name: </h2>
-                            <h4>Pablotheshekpeking</h4>
+                            <h4 data-testid="slackUserName">Pablotheshekpeking</h4>
                         </section>
                         <!--slack name stops -->
 
                         <!--day of week starts -->
                         <section id="dayofweek">
                             <h4>Day of the Week:</h4>
-                            <p data-testid="currentDayOfTheWeek">Today is <span id="dayOfWeek"></span></p>
+                            <p data-testid="currentDayOfTheWeek">Today is <span id="dayOfWeek" data-testid="currentDayOfTheWeek"></span></p>
                         </section>
                         <!--day of week stops -->
 
                         <!--current UTC time starts -->
                         <section id="UTCtime">
                             <h4>Current UTC Time: </h4>
-                            <p>The current UTC time is: <span id="currentTime"></span></p>
+                            <p>The current UTC time is: <span id="currentTime" data-testid="currentUTCTime"></span></p>
                         </section>
                         <!--current UTC time stops -->
 
